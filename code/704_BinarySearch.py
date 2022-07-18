@@ -8,14 +8,14 @@ class Solution:
         end = len(nums)-1
         while start <= end:
             pos = (start+end)//2
-            if nums[pos] > target:
-                end = pos
-            elif nums[pos] < target:
-                start = pos
-            elif target == nums[pos]:
+            if target == nums[pos]:
                 return pos
+            elif nums[pos] > target:
+                end = pos-1
             else:
-                return -1
+                start = pos+1
+
+        return -1
 
 
 if __name__ == '__main__':
